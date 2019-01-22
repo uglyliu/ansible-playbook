@@ -1,13 +1,12 @@
 ---
 - name: Install common nginx php nodejs mysql redis
-  hosts: lan-testing-3 
+  hosts: all
   #hosts: 192.168.200.219
-  become: true
   remote_user: root
   roles:
-          # - common
+    - common
           #- nginx
           #- php-fpm
           #- nodejs
           #- mysql
-    - redis
+          #- redis
