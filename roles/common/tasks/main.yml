@@ -91,11 +91,13 @@
   ignore_errors: yes
 
 - name: 禁用SELINUX
-  lineinfile:
-    dest: /etc/selinux/config
-    regexp: '^SELINUX='
-    line: 'SELINUX=disabled'
-    
+  #lineinfile:
+  #  dest: /etc/selinux/config
+  #  regexp: '^SELINUX='
+  #  line: 'SELINUX=disabled'
+  selinux:
+    state: disabled  
+
 - name: 增加/etc/bashrc
   blockinfile:
     path: /etc/bashrc 

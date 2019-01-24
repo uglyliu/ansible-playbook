@@ -8,6 +8,11 @@ localhost ansible_connection=local ansible_ssh_host=192.168.200.113
 openstack.240-controller ansible_ssh_host=192.168.200.240
 openstack.241-node01 ansible_ssh_host=192.168.200.241
 
+[okd]
+192.168.200.231
+192.168.200.212
+192.168.200.208
+
 [zbb]
 openshift.201-all01 ansible_ssh_host=192.168.200.201
 openshift.202-all03 ansible_ssh_host=192.168.200.202
