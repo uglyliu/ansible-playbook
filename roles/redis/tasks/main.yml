@@ -40,7 +40,7 @@
       'Please select the redis config file name \[\/etc\/redis\/6379.conf\] ': '/etc/redis/6379.conf'
       'Please select the redis log file name \[\/var\/log\/redis_6379.log\] ': '/var/log/redis_6379.log'
       'Please select the data directory for this instance \[\/var\/lib\/redis\/6379\] ': '/var/lib/redis/6379'
-      'Please select the redis executable path \[\/usr\/local\/bin\/redis-server\] ': '/usr/local/bin/redis-server'
+      'Please select the redis executable path .*': '/usr/local/bin/redis-server'
       'Is this ok\? Then press ENTER to go on or Ctrl-C to abort.': 'y'
     echo: true
 
