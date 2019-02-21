@@ -45,7 +45,7 @@
     echo: true
 
 - name: stop redis
-  service: name=redis_6379 state=stopped
+  command: /usr/sbin/service stop redis_6379
 
 - name: 等待redis停止
   wait_for:
