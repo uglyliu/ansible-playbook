@@ -8,6 +8,13 @@ lan-testing-3 ansible_ssh_host=192.168.200.3
 openstack.240-controller ansible_ssh_host=192.168.200.240
 openstack.241-node01 ansible_ssh_host=192.168.200.241
 
+[wl]
+wlsit-swf ansible_ssh_host=192.168.200.214
+wlsit-chess ansible_ssh_host=192.168.200.228
+wlsit-fish ansible_ssh_host=192.168.200.205
+wlsit-phpapi ansible_ssh_host=192.168.200.217
+wlsit-base ansible_ssh_host=192.168.200.227
+
 [okd]
 192.168.200.231
 192.168.200.212
