@@ -1,9 +1,10 @@
 ---
-- name: 安装依赖:gcc,tcl
+- name: 安装依赖:gcc,tcl,pip
   yum:
     name:
       - gcc
       - tcl
+      - python2-pip
     state: present
 
 - name: PIP安装pexpect
@@ -12,7 +13,7 @@
 
 - name: 下载redis-stable
   get_url:
-    url: http://download.redis.io/redis-stable.tar.gz
+    url: https://github.com/antirez/redis/archive/5.0.4.tar.gz
     dest: /tmp/redis-stable.tar.gz
     timeout: 600
 
@@ -25,16 +26,16 @@
 - name: 编译redis
   command: make
   args:
-    chdir: /tmp/redis-stable
+    chdir: /tmp/redis-5.0.4
 
 - name: 安装redis
   command: make install
   args:
-    chdir: /tmp/redis-stable
+    chdir: /tmp/redis-5.0.4
 
 - name: 配置redis服务
   expect:
-    command: /tmp/redis-stable/utils/install_server.sh
+    command: /tmp/redis-5.0.4/utils/install_server.sh
     responses:
       'Please select the redis port for this instance: \[6379\] ': '6379'
       'Please select the redis config file name \[\/etc\/redis\/6379.conf\] ': '/etc/redis/6379.conf'
@@ -45,7 +46,7 @@
     echo: true
 
 - name: stop redis
-  command: /usr/sbin/service stop redis_6379
+  command: /usr/sbin/service redis_6379 stop
 
 - name: 等待redis停止
   wait_for:

@@ -1,3 +1,5 @@
+[hc]
+192.168.200.215
 [base]
 localhost ansible_connection=local ansible_ssh_host=192.168.200.113
 lan-devops ansible_ssh_host=192.168.200.150

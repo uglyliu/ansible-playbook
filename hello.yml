@@ -1,5 +1,5 @@
 - name: Hello World Sample
-  hosts: localhost
+  hosts: base
   gather_facts: false
   tasks:
     - name: Hello Message
